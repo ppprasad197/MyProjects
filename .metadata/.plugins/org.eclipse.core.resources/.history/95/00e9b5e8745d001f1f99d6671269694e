@@ -1,0 +1,14 @@
+//6.Write a program create student class with member variables
+//	rollno,name of student and percentage
+//	print the information about students who get highest percentage.
+
+package InterviewPrep;
+
+public class Student {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

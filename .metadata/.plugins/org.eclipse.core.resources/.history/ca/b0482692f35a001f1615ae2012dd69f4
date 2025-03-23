@@ -1,0 +1,34 @@
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+
+	public static void isArmstrongNumber(int number) {
+		int power = String.valueOf(number).length();
+		int sum =0;
+		
+		while(number != 0) {
+			int remainder = number % 10;
+			sum = sum + 
+		}
+
+	}
+
+	public static int findValue(int number, int power) {
+		int value = 1;
+		if (power != 1) {
+			value = value * number;
+			power--;
+		}
+		return number;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number to check Armstrong or not : ");
+		isArmstrongNumber(sc.nextInt());
+	}
+
+}

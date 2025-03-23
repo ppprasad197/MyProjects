@@ -1,0 +1,23 @@
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void isPalindrome() {
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		int originalNumber = number;
+
+		while (number != 0) {
+			int remainder = number % 10;
+
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		isPalindrome();
+	}
+
+}

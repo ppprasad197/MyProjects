@@ -1,0 +1,5 @@
+package com.example.EmployeeManagementSystem.services;
+
+public interface EmployeeService {
+
+}

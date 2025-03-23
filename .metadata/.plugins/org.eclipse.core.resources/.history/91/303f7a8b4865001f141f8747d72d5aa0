@@ -1,0 +1,34 @@
+//Write a program CheckTheSeason if the month number is entered. In this program
+//check needs to be done if the month number is correct data type and numbers are
+//between 1 to 12. If not, the program should throw an error and should continue till it
+//is not correctly entered.
+//Following table indicates Month numbers and seasons:
+//2 & 3 : Vasanta
+//4 & 5: Grishma / Summer
+//6 & 7: Monsoon / Rainy
+//8 & 9: Sharada
+//10 & 11: Hemanta
+//12 & 1 : Shishira / Winter
+//12 & 1 : Winter
+
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class PrintSeason {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int ch = sc.nextInt();
+		Switch(ch){
+			case 1:
+				break;
+			case 2:
+				break;
+				default:
+					break;
+		}
+	}
+
+}

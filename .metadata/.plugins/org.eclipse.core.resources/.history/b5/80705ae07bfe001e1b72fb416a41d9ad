@@ -1,0 +1,61 @@
+package com.example.EmployeeManagementSystem.services.implementation;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+import com.example.EmployeeManagementSystem.entity.Employee;
+import com.example.EmployeeManagementSystem.exception.ResourceNotFoundException;
+import com.example.EmployeeManagementSystem.mapper.EmployeeMapper;
+import com.example.EmployeeManagementSystem.repository.EmployeeRepository;
+import com.example.EmployeeManagementSystem.services.EmployeeService;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public EmployeeDto createEmployee(EmployeeDto employeeDto) {
+		Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
+		Employee savedEmployee = employeeRepository.save(employee);
+		return EmployeeMapper.mapToEmployeeDto(savedEmployee);
+	}
+
+	@Override
+	public EmployeeDto getEmployeeById(Integer employeeId) {
+
+		Employee employee = employeeRepository.findById(employeeId).orElseThrow(
+				() -> new ResourceNotFoundException("There is no data present agianst this id : " + employeeId));
+		return EmployeeMapper.mapToEmployeeDto(employee);
+	}
+
+//	@Override
+//	public List<EmployeeDto> getAllEmployee() {
+//		List<Employee> employees = employeeRepository.findAll();
+//		return EmployeeMapper.mapToEmployeeDtoList(employees);
+//	}
+	public List<EmployeeDto> getAllEmployee() {
+		List<Employee> employees = employeeRepository.findAll();
+		List<EmployeeDto> employeeDtos = new ArrayList<>();
+
+		for (Employee employee : employees) {
+			EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
+			employeeDtos.add(employeeDto);
+		}
+
+		return employeeDtos;
+	}
+
+	@Override
+	public List<EmployeeDto> getAllEmployee() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

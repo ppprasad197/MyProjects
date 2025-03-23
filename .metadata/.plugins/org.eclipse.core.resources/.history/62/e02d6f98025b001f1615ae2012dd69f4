@@ -1,0 +1,52 @@
+package InterviewPrep;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void isPalindrome() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number to check : ");
+		int number = sc.nextInt();
+		int originalNumber = number;
+		int reverseNumber = 0;
+
+		while (number != 0) {
+			int remainder = number % 10;
+			reverseNumber = reverseNumber * 10 + remainder;
+			number = number / 10;
+		}
+		if (originalNumber == reverseNumber)
+			System.out.println("Number is palindrome and reverse number is : " + reverseNumber);
+		else
+			System.out.println("Number is not palindrome and reverse number is : " + reverseNumber);
+	}
+
+	public static void isStringPalindrome() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter string to check : ");
+		String str = sc.next();
+
+		char[] strCharArr = str.toCharArray();
+		char[] reverseStrCharArr = new char[str.length()];
+
+		for (int i = str.length() - 1; i >= 0; i--) {
+			for (int j = 0; j < str.length() - i; j++) {
+				reverseStrCharArr[j] = strCharArr[i];
+			}
+		}
+
+		if (Arrays.equals(strCharArr, reverseStrCharArr))
+			System.out.println("String is palindrome and reverse string is : " + reverseStrCharArr.toString());
+		else
+			System.out.println("String is not palindrome and reverse string is : " + reverseStrCharArr.toString());
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// isPalindrome();
+		isStringPalindrome();
+	}
+
+}

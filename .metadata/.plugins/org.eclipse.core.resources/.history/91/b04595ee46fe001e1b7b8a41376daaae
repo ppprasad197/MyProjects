@@ -1,0 +1,20 @@
+package com.example.EmployeeManagementSystem.services.implementation;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+import com.example.EmployeeManagementSystem.entity.Employee;
+import com.example.EmployeeManagementSystem.mapper.EmployeeMapper;
+import com.example.EmployeeManagementSystem.repository.EmployeeRepository;
+import com.example.EmployeeManagementSystem.services.EmployeeService;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public EmployeeDto createEmployee(EmployeeDto employeeDto) {
+		Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
+
+		return null;
+	}
+
+}

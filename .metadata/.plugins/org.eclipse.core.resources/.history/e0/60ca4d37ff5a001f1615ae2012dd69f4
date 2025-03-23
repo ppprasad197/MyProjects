@@ -1,0 +1,14 @@
+package InterviewPrep;
+
+public class Palindrome {
+
+	public static void isPalindrome() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		isPalindrome();
+	}
+
+}

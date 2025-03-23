@@ -1,0 +1,44 @@
+package InterviewPrep;
+
+import java.util.Arrays;
+
+public class StringNumberBifurcate {
+
+	public static void bifurcateString() {
+		String str = "75698463210125!&%ASi,.Pp";
+		char[] strNumArr = new char[str.length()];
+		char[] strArr = new char[str.length()];
+
+		int j = 0, k = 0;
+
+		for (int i = 0; i < str.length(); i++) {
+			char c = str.charAt(i);
+
+			if (String.valueOf(c).matches("[A-Za-z!&%,.]")) {
+				strArr[j] = c;
+				j++;
+			} else if (Character.isDigit(c)) {
+				strNumArr[k] = c;
+				k++;
+			}
+		}
+
+		for (char c : strArr) {
+			System.out.print(c + " ");
+		}
+		System.out.println();
+
+		String reverseNumArr = strNumArr.toString();
+		StringBuilder reverseString = new StringBuilder(strNumArr.toString());
+		reverseString.reverse();
+
+//		for (char c : strNumArr) {
+//			System.out.print(c + " ");
+//		}
+
+	}
+
+	public static void main(String[] args) {
+		bifurcateString();
+	}
+}

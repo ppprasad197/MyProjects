@@ -1,0 +1,16 @@
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class ElementRepeat {
+
+	public static void isElemenRepeatedInArray() {
+		Scanner sc = new Scanner(System.in);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

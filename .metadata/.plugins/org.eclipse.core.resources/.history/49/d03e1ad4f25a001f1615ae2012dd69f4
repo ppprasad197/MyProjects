@@ -1,0 +1,14 @@
+package InterviewPrep;
+
+public class ArmstrongNumber {
+
+	public static void isArmstrongNumber(int number) {
+		int power = String.valueOf(number).length();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

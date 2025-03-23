@@ -1,0 +1,167 @@
+
+//Write Java programs to:
+//1. Calculate average of numbers using Array
+//2.Reverse an array
+//3.Sort an array in ascending order
+//4.Find out the highest and second highest numbers in an array
+//5.Concatenate two arrays
+
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class ArrayManipulation {
+	Scanner sc = new Scanner(System.in);
+
+	public void averageOfNumbers() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		int sum = 0;
+		for (int i : arr) {
+			sum = sum + i;
+		}
+		int avg = sum / size;
+		System.out.println("Average of all elements of array : " + avg);
+	}
+
+	public void reverseArray() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("Reverse array is : ");
+		for (int i = size - 1; i >= 0; i--) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+
+	public int[] sortArrayDesc() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = 0; j < size - 1; j++) {
+				if (arr[j + 1] > arr[j]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println("Sorted array in descendig order is : ");
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+
+		return arr;
+
+	}
+
+	public void findHighestByPosition(int position) {
+
+		int[] arr = sortArrayDesc();
+
+		System.out.println("Highest " + position + " from array is : " + arr[position - 1]);
+
+	}
+
+	public void sortArrayAsc() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = 0; j < size - 1; j++) {
+				if (arr[j + 1] < arr[j]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+
+		System.out.println("Sorted array in ascending order is : ");
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+	}
+
+	public class ArrayConcatenation {
+
+	    Scanner sc = new Scanner(System.in);
+
+	    public void concatenateArray() {
+	        System.out.println("Enter the array1 size : ");
+	        int size1 = sc.nextInt();
+	        int[] arr1 = new int[size1];
+
+	        System.out.println("Enter array1 elements : ");
+	        for (int i = 0; i < size1; i++) {
+	            arr1[i] = sc.nextInt();
+	        }
+
+	        System.out.println("Enter the array2 size : ");
+	        int size2 = sc.nextInt();
+	        int[] arr2 = new int[size2];
+
+	        System.out.println("Enter array2 elements : ");
+	        for (int i = 0; i < size2; i++) {
+	            arr2[i] = sc.nextInt();
+	        }
+
+	        // Create a result array with a size that is the sum of both arrays
+	        int[] resultArr = new int[arr1.length + arr2.length];
+
+	        // Copy elements from arr1 to resultArr
+	        System.arraycopy(arr1, 0, resultArr, 0, arr1.length);
+
+	        // Copy elements from arr2 to resultArr
+	        System.arraycopy(arr2, 0, resultArr, arr1.length, arr2.length);
+
+	        System.out.println("Array after concatenation is : ");
+
+	        // Print the concatenated array
+	        for (int i : resultArr) {
+	            System.out.print(i + " ");
+	        }
+	    }
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		ArrayManipulation arrayManipulation = new ArrayManipulation();
+		// arrayManipulation.averageOfNumbers();
+		// arrayManipulation.reverseArray();
+		// arrayManipulation.sortArrayDesc();
+		// arrayManipulation.sortArrayAsc();
+//		System.out.println("Enter which position highest number is required : ");
+//		arrayManipulation.findHighestByPosition(sc.nextInt());
+		arrayManipulation.arra
+	}
+
+}

@@ -1,0 +1,135 @@
+package HMSProject;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+import com.mysql.cj.jdbc.exceptions.MySQLStatementCancelledException;
+
+public class Doctor {
+	private Connection connection;
+	private Scanner scanner = new Scanner(System.in);
+
+	public Doctor(Connection connection) {
+		super();
+		this.connection = connection;
+	}
+
+	public void addDoctor() {
+		String query = "insert into doctors(name,specialisation)values(?,?)";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			System.out.println("Enter doctor name : ");
+			String name = scanner.nextLine();
+			System.out.println("Enter doctor specialisation : ");
+			String specialisation = scanner.next();
+
+			preparedStatement.setString(1, name);
+			preparedStatement.setString(2, specialisation);
+
+			int isAdded = preparedStatement.executeUpdate();
+
+			if (isAdded > 0)
+				System.out.println("Doctor added successfully");
+			else
+				System.out.println("Doctor not added");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void viewDoctors() {
+		String query = "select * from doctors";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				String name = resultSet.getString("name");
+				String specialisation = resultSet.getString("specialisation");
+
+				System.out.println("ID: " + id);
+				System.out.println("Name: " + name);
+				System.out.println("Specialisation: " + specialisation);
+
+				System.out.println("---------------------------");
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean getDoctorById(int id) {
+
+		String query = "select * from doctors where id=?";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			preparedStatement.setInt(1, id);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next())
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return false;
+	}
+
+	public void deleteDoctorById() {
+		String query = "delete from doctors where id = ?";
+
+		try {
+			PreparedStatement preparedStatement = connection.prepareStatement(query);
+			System.out.println("Enter doctor's ID to delete");
+			int id = scanner.nextInt();
+			preparedStatement.setInt(1, id);
+			int isDeleted = preparedStatement.executeUpdate();
+
+			if (isDeleted > 0) {
+				System.out.println("Doctor deleted successfully");
+			} else {
+				System.out.println("No doctor present against that ID");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void updateDoctorById() {
+		String query = "update doctors set name = ?, specialisation=? where id = ?";
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter doctors id : ");
+		if (getDoctorById(sc.nextInt()) == true) {
+			try {
+				PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+				System.out.println("Enter doctors updated name : ");
+				preparedStatement.setString(1, sc.next());
+
+				System.out.println("Enter doctors updated specialisation : ");
+				preparedStatement.setString(2, sc.next());
+
+				System.out.println("Enter doctors ID to update doctor : ");
+				preparedStatement.setInt(3, sc.nextInt());
+
+				preparedStatement.executeUpdate();
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+
+//Write Java programs to:
+//1. Calculate average of numbers using Array
+//2.Reverse an array
+//3.Sort an array in ascending order
+//4.Find out the highest and second highest numbers in an array
+//5.Concatenate two arrays
+
+package InterviewPrep;
+
+public class ArrayManipulation {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

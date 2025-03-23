@@ -1,0 +1,38 @@
+//6.Write a program create student class with member variables
+//	rollno,name of student and percentage
+//	print the information about students who get highest percentage.
+
+package InterviewPrep;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Student {
+
+	private int rollNum;
+	private String name;
+	private double perentage;
+
+	ArrayList<Student> studentsDetails = new ArrayList<>();
+
+	public Student(int rollNum, String name, double perentage) {
+		super();
+		this.rollNum = rollNum;
+		this.name = name;
+		this.perentage = perentage;
+
+		studentsDetails.add(new Student(rollNum, name, perentage));
+	}
+
+	public void displayStudentsList() {
+		for (Student student : studentsDetails) {
+
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+	}
+
+}

@@ -1,0 +1,94 @@
+//6.Write a program create student class with member variables
+//	rollno,name of student and percentage
+//	print the information about students who get highest percentage.
+
+package InterviewPrep;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Student {
+
+	private int rollNum;
+	private String name;
+	private double perentage;
+
+	public Student() {
+		super();
+	}
+
+	public Student(int rollNum, String name, double perentage) {
+		super();
+		this.rollNum = rollNum;
+		this.name = name;
+		this.perentage = perentage;
+
+	}
+
+	public int getRollNum() {
+		return rollNum;
+	}
+
+	public void setRollNum(int rollNum) {
+		this.rollNum = rollNum;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPerentage() {
+		return perentage;
+	}
+
+	public void setPerentage(double perentage) {
+		this.perentage = perentage;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [rollNum=" + rollNum + ", name=" + name + ", perentage=" + perentage + "]";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ArrayList<Student> studentsDetails = new ArrayList<>();
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number of students : ");
+		int numberOfStudents = sc.nextInt();
+
+		for (int i = 0; i < numberOfStudents; i++) {
+
+			System.out.println("Enter roll number : ");
+			int rollNum = sc.nextInt();
+
+			System.out.println("Enter roll name : ");
+			String name = sc.next();
+
+			System.out.println("Enter roll percentage : ");
+			double percentage = sc.nextDouble();
+
+			studentsDetails.add(new Student(rollNum, name, percentage));
+		}
+
+		System.out.println(studentsDetails);
+
+		Student topper = studentsDetails.get(0);
+
+		for (Student student : studentsDetails) {
+			if (student.getPerentage() > topper.getPerentage()) {
+				topper = student;
+			}
+		}
+		System.out.println("TOpper of class is : ");
+		System.out.println(topper);
+
+	}
+
+}

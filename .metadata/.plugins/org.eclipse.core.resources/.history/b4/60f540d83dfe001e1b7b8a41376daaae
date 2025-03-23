@@ -1,0 +1,16 @@
+package com.example.EmployeeManagementSystem.mapper;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+import com.example.EmployeeManagementSystem.entity.Employee;
+
+public class EmployeeMapper {
+
+	public static EmployeeDto mapToEmployeeDto(Employee employee) {
+		return new EmployeeDto(employee.getId(), employee.getName(), employee.getLastName(), employee.getEmail());
+	}
+
+	public static Employee mapToEmployee(EmployeeDto employeeDto) {
+		return new EmployeeDto(employeeDto.getId(), employeeDto.getName(), employeeDto.getLastName(),
+				employeeDto.getEmail());
+	}
+}

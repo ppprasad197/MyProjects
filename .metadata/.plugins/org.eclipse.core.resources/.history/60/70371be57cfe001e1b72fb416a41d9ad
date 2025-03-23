@@ -1,0 +1,17 @@
+package com.example.EmployeeManagementSystem.services;
+
+import java.util.List;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+
+public interface EmployeeService {
+	EmployeeDto createEmployee(EmployeeDto employeeDto);
+
+	EmployeeDto getEmployeeById(Integer employeeId);
+
+	List<EmployeeDto> getAllEmployee();
+
+	EmployeeDto updateEmployee(Integer employeeId, EmployeeDto updatedEmployeeDto) {
+		
+	}
+}

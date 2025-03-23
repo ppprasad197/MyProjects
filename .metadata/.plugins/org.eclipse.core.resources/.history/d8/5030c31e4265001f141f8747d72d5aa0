@@ -1,0 +1,24 @@
+//1. Write a program “PrintFriendsNames” that takes 3 friends’ names as input
+//arguments and prints out “Hi” to these friends in the reverse of the order given. It
+//also adds “and “ before the last name.
+//For example:
+//Input Arguments : Mahesh, Suresh, Devesh
+//Output : “Hi Devesh, Suresh and Mahesh”
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class HiiFriends {
+
+	public static void hiiFriends() {
+		Scanner sc = new Scanner(System.in);
+		String[] strArr = new String[3];
+		System.out.println("Enter names of " + strArr.length + " friend");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

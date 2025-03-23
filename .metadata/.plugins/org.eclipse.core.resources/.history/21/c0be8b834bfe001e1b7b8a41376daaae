@@ -1,0 +1,7 @@
+package com.example.EmployeeManagementSystem.services;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+
+public interface EmployeeService {
+	EmployeeDto createEmployee(EmployeeDto employeeDto);
+}

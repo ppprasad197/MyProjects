@@ -1,0 +1,95 @@
+
+//Write Java programs to:
+//1. Calculate average of numbers using Array
+//2.Reverse an array
+//3.Sort an array in ascending order
+//4.Find out the highest and second highest numbers in an array
+//5.Concatenate two arrays
+
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class ArrayManipulation {
+	Scanner sc = new Scanner(System.in);
+
+	public void averageOfNumbers() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		int sum = 0;
+		for (int i : arr) {
+			sum = sum + i;
+		}
+		int avg = sum / size;
+		System.out.println("Average of all elements of array : " + avg);
+	}
+
+	public void reverseArray() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.println("Reverse array is : ");
+		for (int i = size - 1; i >= 0; i--) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+
+	public void sortArrayDesc() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+		for (int i = 0; i < size - 1; i++) {
+			for (int j = 0; j < size - 1; j++) {
+				if (arr[j + 1] > arr[j]) {
+					int temp = arr[j];
+					arr[j] = arr[j + 1];
+					arr[j + 1] = temp;
+				}
+			}
+		}
+		System.out.println("Sorted array in descendig order is : ");
+		for (int i : arr) {
+			System.out.print(i + " ");
+		}
+
+	}
+
+	public void sortArrayAsc() {
+		System.out.println("Enter the array size : ");
+		int size = sc.nextInt();
+		int[] arr = new int[size];
+
+		System.out.println("Enter array elements : ");
+		for (int i = 0; i < size; i++) {
+			arr[i] = sc.nextInt();
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ArrayManipulation arrayManipulation = new ArrayManipulation();
+		// arrayManipulation.averageOfNumbers();
+		// arrayManipulation.reverseArray();
+		arrayManipulation.sortArrayDesc();
+	}
+
+}

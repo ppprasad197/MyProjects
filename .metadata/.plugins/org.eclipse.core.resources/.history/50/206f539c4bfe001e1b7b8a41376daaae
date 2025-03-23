@@ -1,0 +1,13 @@
+package com.example.EmployeeManagementSystem.services;
+
+import org.springframework.stereotype.Service;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public interface EmployeeService {
+	EmployeeDto createEmployee(EmployeeDto employeeDto);
+}

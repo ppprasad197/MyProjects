@@ -1,0 +1,31 @@
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class StrongNumber {
+
+	public static void isStrongNumber(int number) {
+		int sum = 0;
+		while (number != 0) {
+			int remainder = number % 10;
+			sum = sum + factorial(remainder);
+		}
+	}
+
+	public static int factorial(int number) {
+		int factor = 1;
+		while (number != 1) {
+			factor = factor * number;
+			number--;
+		}
+		return factor;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number to check Strong or not : ");
+		isStrongNumber(sc.nextInt());
+	}
+
+}

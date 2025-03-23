@@ -1,0 +1,14 @@
+package InterviewPrep;
+
+public class ElementRepeat {
+
+	public static void isElemenRepeatedInArray() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

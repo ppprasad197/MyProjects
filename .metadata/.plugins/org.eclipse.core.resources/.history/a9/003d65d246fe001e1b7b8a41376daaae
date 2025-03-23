@@ -1,0 +1,7 @@
+package com.example.EmployeeManagementSystem.services.implementation;
+
+import com.example.EmployeeManagementSystem.services.EmployeeService;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+}

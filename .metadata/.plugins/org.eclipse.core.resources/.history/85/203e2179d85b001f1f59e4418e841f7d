@@ -1,0 +1,49 @@
+package InterviewPrep;
+
+import java.util.Scanner;
+
+public class ElementRepeat {
+
+	Scanner sc = new Scanner(System.in);
+
+	public static void isIntegerRepeatedInArray() {
+
+		int[] arrInt = new int[5];
+
+		System.out.println("Enter array elements : ");
+
+		for (int i = 0; i < arrInt.length; i++) {
+			arrInt[i] = sc.nextInt();
+		}
+
+		boolean flag = false;
+
+		for (int i = 0; i < arrInt.length; i++) {
+			int j = arrInt[i];
+			for (int k = i + 1; k < arrInt.length; k++) {
+				if (j == arrInt[k]) {
+					flag = true;
+					break;
+				}
+			}
+			if (flag == true) {
+				System.out.println("There is repeating element in array");
+				break;
+			} else {
+				System.out.println("There is no repeating element in array");
+				break;
+			}
+
+		}
+	}
+
+	public static void isElementRepeatedInString() {
+		String str = sc.next();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		isIntegerRepeatedInArray();
+	}
+
+}

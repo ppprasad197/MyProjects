@@ -1,0 +1,23 @@
+package com.example.EmployeeManagementSystem.services.implementation;
+
+import org.springframework.stereotype.Service;
+
+import com.example.EmployeeManagementSystem.dto.EmployeeDto;
+import com.example.EmployeeManagementSystem.entity.Employee;
+import com.example.EmployeeManagementSystem.mapper.EmployeeMapper;
+import com.example.EmployeeManagementSystem.repository.EmployeeRepository;
+import com.example.EmployeeManagementSystem.services.EmployeeService;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	private EmployeeRepository employeeRepository;
+
+	@Override
+	public EmployeeDto createEmployee(EmployeeDto employeeDto) {
+		Employee employee = EmployeeMapper.mapToEmployee(employeeDto);
+		Employee savedEmployee = employeeRepository.save(employee);
+		return EmployeeMapper.mapToEmployeeDto(savedEmployee);
+	}
+
+}
