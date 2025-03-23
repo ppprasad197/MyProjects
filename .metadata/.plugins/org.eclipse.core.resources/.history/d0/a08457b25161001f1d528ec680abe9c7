@@ -1,0 +1,5 @@
+package StockMarket.Backend.StockMarket.dao;
+
+public class StockMarketDao {
+
+}

@@ -1,0 +1,5 @@
+package StockMarket.Backend.StockMarket.controller;
+
+public class UserController {
+
+}

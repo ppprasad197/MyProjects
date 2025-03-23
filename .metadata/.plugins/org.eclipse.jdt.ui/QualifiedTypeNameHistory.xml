@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration"/>
+    <fullyQualifiedTypeName name="StockMarket.Backend.StockMarket.dao.UserDao"/>
+    <fullyQualifiedTypeName name="StockMarket.Backend.StockMarket.entity.User"/>
+    <fullyQualifiedTypeName name="StockMarket.Backend.StockMarket.dao.StockMarketDao"/>
+    <fullyQualifiedTypeName name="StockMarket.Backend.StockMarket.entity.StockMarket"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,5 @@
+package StockMarket.Backend.StockMarket.Security;
+
+public class SecurityConfig {
+
+}

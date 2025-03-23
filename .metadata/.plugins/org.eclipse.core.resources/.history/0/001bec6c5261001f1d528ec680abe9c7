@@ -1,0 +1,15 @@
+package StockMarket.Backend.StockMarket.entity;
+
+import java.math.BigDecimal;
+import java.sql.Date;
+
+public class StockMarket {
+	private int id;
+	private String stockname;
+	private Date pricedate;
+	private BigDecimal price;
+	private int quantity;
+	private long volume;
+
+	// Getters and Setters
+}

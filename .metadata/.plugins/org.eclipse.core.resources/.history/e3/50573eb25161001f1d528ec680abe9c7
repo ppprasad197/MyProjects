@@ -1,0 +1,5 @@
+package StockMarket.Backend.StockMarket.entity;
+
+public class StockMarket {
+
+}

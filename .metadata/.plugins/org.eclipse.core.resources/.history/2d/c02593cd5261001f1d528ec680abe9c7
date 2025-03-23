@@ -1,0 +1,19 @@
+package StockMarket.Backend.StockMarket.controller;
+
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+	private final UserDao userDao;
+
+	public UserController(UserDAO userDAO) {
+		this.userDao = userDAO;
+	}
+
+	@PostMapping("/register")
+	public void registerUser(@RequestBody User user) {
+		userDAO.save(user);
+	}
+}
