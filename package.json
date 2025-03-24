@@ -1,0 +1,25 @@
+{
+    "name": "email-service",
+    "version": "1.0.0",
+    "description": "A resilient email sending service with retry logic, fallback mechanism, idempotency, rate limiting, and status tracking.",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node src/index.js",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/yourusername/email-service.git"
+    },
+    "author": "Prasad Potdar",
+    "license": "MIT",
+    "dependencies": {
+        "nodemon": "^2.0.15"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    }
+}
