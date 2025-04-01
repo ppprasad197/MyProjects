@@ -1,6 +1,5 @@
 package com.postandcomments.postandcomment.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +15,6 @@ import com.postandcomments.postandcomment.service.PostService;
 @RequestMapping("/post/")
 public class PostController {
 
-	@Autowired
 	private PostService postService;
 
 	@PostMapping
