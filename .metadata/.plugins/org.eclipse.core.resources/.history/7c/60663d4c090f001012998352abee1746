@@ -1,5 +1,0 @@
-package com.postandcomments.postandcomment.repository;
-
-public interface CommentRepository {
-
-}
