@@ -15,4 +15,8 @@ public class PostService {
 	public Post createPost(Post post) {
 		return postRepository.save(post);
 	}
+
+	public Post getPostById(Long id) {
+		return postRepository.findById(id).orElseThrow(() -> new RuntimeException("Post not found"));
+	}
 }
