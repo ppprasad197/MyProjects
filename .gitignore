@@ -1,2 +1,6 @@
 /.metadata/
 .metadata/ 
+".metadata/" 
+".classpath" 
+".project" 
+"*.log" 
