@@ -41,7 +41,7 @@ public class Post {
 	@Column(nullable = false, updatable = false)
 	LocalDateTime createdAt;
 
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	LocalDateTime updatedAt;
 
 //	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
