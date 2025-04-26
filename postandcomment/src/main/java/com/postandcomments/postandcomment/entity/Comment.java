@@ -33,10 +33,10 @@ public class Comment {
 
 	private String author;
 
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	private LocalDateTime createdAt;
 
-	@Column(nullable = false, updatable = false)
+	@Column(nullable = false)
 	private LocalDateTime updatedAt;
 
 	@ManyToOne
