@@ -1,0 +1,30 @@
+<div class="prod-form">
+    <div class="prod" *ngFor="let p of products | async">
+
+        <img [src]="p.image" [alt]="p.name" />
+
+        <h3>{{ p.name }}</h3>
+        <p class="price">₹{{ p.price }}</p>
+
+        <a [routerLink]="['/product', p.id]">View Details</a>
+
+        <div class="cart-controls">
+
+            <button *ngIf="((getCount(p.id) | async) ?? 0) === 0" class="add-btn" (click)="addToCart(p)">
+                Add to Cart
+            </button>
+
+            <div *ngIf="((getCount(p.id) | async) ?? 0) > 0" class="qty-box">
+
+                <button (click)="decreaseQuantity(p.id)">➖</button>
+
+                <span>{{ (getCount(p.id) | async) ?? 0 }}</span>
+
+                <button (click)="addToCart(p)">➕</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

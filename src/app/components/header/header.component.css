@@ -1,0 +1,33 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e293b;
+    color: white;
+    padding: 15px 30px;
+}
+
+
+.logo {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.nav a {
+    margin: 0 15px;
+    color: white;
+    font-weight: bolder;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.cart {
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.count {
+    margin: 5px;
+}

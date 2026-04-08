@@ -1,0 +1,26 @@
+<h3>🛒 Your Cart</h3>
+
+<div *ngIf="cartItems | async as items">
+
+    <div class="container" *ngFor="let item of items">
+
+        <div class="image-section">
+            <img [src]="item.image" width="100" />
+        </div>
+
+        <div class="details-section">
+            <h3>{{ item.name }}</h3>
+            <p>Price: Rs.{{ item.price }}</p>
+            <p><b>Quantity:</b> {{ item.qty }}</p>
+
+            <button (click)="decreaseQuantity(item.id)">➖</button>
+
+            <!-- <span>{{ (getCount(item.id) | async) ?? 0 }}</span> -->
+
+            <button (click)="addToCart(item)">➕</button>
+
+        </div>
+
+    </div>
+
+</div>

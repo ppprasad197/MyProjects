@@ -4,6 +4,7 @@ export interface Product {
     price: number;
     image: string;
     liked: boolean;
+    description: string;
 }
 
 export interface ProductState {

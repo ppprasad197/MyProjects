@@ -1,0 +1,10 @@
+<header class="header">
+    <div class="logo">Electronic Store</div>
+    <nav class="nav">
+        <a routerLink="/">Home</a>
+    </nav>
+
+    <div class="cart" (click)="goToCart()">
+        🛒 <span class="count">{{ cartCount | async }}</span>
+    </div>
+</header>

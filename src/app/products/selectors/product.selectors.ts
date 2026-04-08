@@ -9,4 +9,8 @@ export const selectProducts = createSelector(
 export const selectProductLoading = createSelector(
     selectProductState,
     (state) => state.loading
-)
+);
+export const selectProductById = (id: number) => createSelector(
+    selectProducts, (product) =>
+    product.find(p => p.id === id)
+);

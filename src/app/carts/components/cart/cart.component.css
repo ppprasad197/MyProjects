@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+}
+
+.image-section img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.details-section {
+    width: 40%;
+}
+
+/* 
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.image-section img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+
+.details-section {
+    max-width: 500px;
+} */

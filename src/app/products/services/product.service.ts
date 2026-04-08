@@ -14,15 +14,17 @@ export class ProductService {
         id: 1,
         name: 'Laptop',
         price: 50000,
-        image: 'assets/laptop.jpg', 
-        liked: false
+        image: 'assets/laptop.jpg',
+        liked: false,
+        description: "This is best you will get"
       },
       {
         id: 2,
         name: 'Phone',
         price: 20000,
-        image: 'assets/mobile.jpg', 
-        liked: false
+        image: 'assets/mobile.jpg',
+        liked: false,
+        description: "This is best you will get"
       }
     ]);
   }

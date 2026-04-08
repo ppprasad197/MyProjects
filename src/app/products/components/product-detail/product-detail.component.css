@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+}
+
+.image-section img {
+    width: 350px;
+    border-radius: 10px;
+}
+
+
+.details-section {
+    max-width: 500px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: green;
+}
+
+.desc {
+    margin: 15px 0;
+    color: #555;
+}

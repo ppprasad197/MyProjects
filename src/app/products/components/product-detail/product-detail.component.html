@@ -1,0 +1,19 @@
+<div class="container" *ngIf="product | async as p">
+
+  <!-- Left: Image -->
+  <div class="image-section">
+    <img [src]="p.image" [alt]="p.name" />
+  </div>
+
+  <!-- Right: Details -->
+  <div class="details-section">
+
+    <h1>{{ p.name }}</h1>
+
+    <p class="price">Rs. {{ p.price }}</p>
+
+    <p class="desc">{{ p.description }}</p>
+
+  </div>
+
+</div>
