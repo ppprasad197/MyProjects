@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../../products/product';
 import { addToCart } from '../../../products/actions/product.actions';
-import { decreaseQuantity } from '../../actions/cart.actions';
+import { decreaseQuantity, removeFromCart } from '../../actions/cart.actions';
 
 @Component({
   selector: 'app-cart',
@@ -35,5 +35,9 @@ export class CartComponent {
   getCount(id: number) {
     console.log(this.store.select(selectProductCount(id)));
     return this.store.select(selectProductCount(id));
+  }
+
+  removeFromCart(id: number) {
+    this.store.dispatch(removeFromCart({ productId: id }));
   }
 }

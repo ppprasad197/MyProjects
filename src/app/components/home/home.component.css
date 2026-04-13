@@ -25,8 +25,8 @@
 
 .prod img {
     height: 150px;
-    width: 100%;
-    object-fit: cover;
+    width: 250px;
+    object-fit: contain;
     border-radius: 8px;
 }
 
@@ -45,12 +45,16 @@
 }
 
 
-
 .qty-box {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+.go-to-cart{
+    display: block;
+    margin-bottom: 20px;
 }
 
 .qty-box button {

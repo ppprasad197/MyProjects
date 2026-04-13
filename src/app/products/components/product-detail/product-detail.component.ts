@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { selectProductById } from '../../selectors/product.selectors';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../product';
+import { addToCart } from '../../actions/product.actions';
+import { selectProductCount } from '../../../carts/selectors/cart.selectors';
+import { decreaseQuantity } from '../../../carts/actions/cart.actions';
 
 @Component({
   selector: 'app-product-detail',
@@ -18,9 +21,21 @@ export class ProductDetailComponent {
   product!: Observable<Product | undefined>;
   constructor(private route: ActivatedRoute, private store: Store) { }
   ngOnInit() {
-    console.log("ng on in it from pdc");
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
     this.product = this.store.select(selectProductById(this.productId));
-    console.log(this.product + ' ' + this.productId);
   }
+
+  addToCart(product: Product) {
+    this.store.dispatch(addToCart({ product }));
+  }
+
+  getCount(id: number) {
+    return this.store.select(selectProductCount(id));
+  }
+
+  decreaseQuantity(id: number) {
+    this.store.dispatch(decreaseQuantity({ productId: id }));
+  }
+
+
 }

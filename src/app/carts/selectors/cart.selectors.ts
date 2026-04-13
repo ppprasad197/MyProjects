@@ -30,7 +30,6 @@ export const selectGroupedCartItems = createSelector(
         grouped[item.id] = { ...item, qty: 1 };
       }
     });
-
     return Object.values(grouped);
   }
 );

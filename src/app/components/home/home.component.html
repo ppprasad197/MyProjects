@@ -1,30 +1,37 @@
 <div class="prod-form">
-    <div class="prod" *ngFor="let p of products | async">
-
+    @for (p of products | async; track p.id) {
+    <div class="prod">
         <img [src]="p.image" [alt]="p.name" />
-
         <h3>{{ p.name }}</h3>
         <p class="price">₹{{ p.price }}</p>
-
         <a [routerLink]="['/product', p.id]">View Details</a>
 
-        <div class="cart-controls">
+        @let count = (getCount(p.id) | async) ?? 0;
 
-            <button *ngIf="((getCount(p.id) | async) ?? 0) === 0" class="add-btn" (click)="addToCart(p)">
+        <div class="cart-controls">
+            @if (p.quantity > count) {
+            <p><b>In stock</b></p>
+            } @else {
+            <p style="color: red;"><b>Out of Stock</b></p>
+            }
+
+            @if (count === 0) {
+            <button class="add-btn" (click)="addToCart(p)" [disabled]="p.quantity === 0">
                 Add to Cart
             </button>
-
-            <div *ngIf="((getCount(p.id) | async) ?? 0) > 0" class="qty-box">
-
-                <button (click)="decreaseQuantity(p.id)">➖</button>
-
-                <span>{{ (getCount(p.id) | async) ?? 0 }}</span>
-
-                <button (click)="addToCart(p)">➕</button>
-
+            } @else {
+            <a class="go-to-cart" routerLink="/cart">Go to Cart</a>
+            <div class="qty-box">
+                <button (click)="decreaseQuantity(p.id)" [disabled]="count === 0">➖</button>
+                <span>{{ count }}</span>
+                <button (click)="addToCart(p)" [disabled]="count >= p.quantity">➕</button>
             </div>
+            }
 
+            @if (p.quantity - count <= 3 && p.quantity> count) {
+                <p>⚠️ Only {{ p.quantity - count }} left!</p>
+                }
         </div>
-
     </div>
+    }
 </div>

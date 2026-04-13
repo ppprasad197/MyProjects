@@ -13,6 +13,7 @@ export class ProductService {
       {
         id: 1,
         name: 'Laptop',
+        quantity: 11,
         price: 50000,
         image: 'assets/laptop.jpg',
         liked: false,
@@ -21,6 +22,7 @@ export class ProductService {
       {
         id: 2,
         name: 'Phone',
+        quantity: 8,
         price: 20000,
         image: 'assets/mobile.jpg',
         liked: false,

@@ -1,19 +1,29 @@
-<div class="container" *ngIf="product | async as p">
-
-  <!-- Left: Image -->
+@if(product|async; as p){
+@let count = (getCount(p.id) | async) ?? 0;
+<div class="container">
   <div class="image-section">
-    <img [src]="p.image" [alt]="p.name" />
+    <img [src]="p.image" alt="p.name">
   </div>
-
-  <!-- Right: Details -->
   <div class="details-section">
-
-    <h1>{{ p.name }}</h1>
-
-    <p class="price">Rs. {{ p.price }}</p>
-
-    <p class="desc">{{ p.description }}</p>
-
+    <h1>{{p.name}}</h1>
+    <p class="price">Price : ₹ {{p.price}}</p>
+    <p class="desc">{{p.description}}</p>
+    <div class="cart-controls">
+      @if(count<p.quantity){ <p><b>In stock</b></p>
+        }@else{
+        <p style="color: red;"><b>Out of Stock</b></p>
+        }
+        @if(count === 0){
+        <button class="add-btn" (click)="addToCart(p)">Add to Cart</button>
+        }@else{
+        <div class="qty-box">
+          <button (click)="decreaseQuantity(p.id)" [disabled]="count===0">➖</button>
+          <span>{{count}}</span>
+          <button (click)="addToCart(p)" [disabled]="count >= p.quantity">➕</button>
+        </div>
+        }
+        <p><b>Subtotal ({{count}} Nos): </b>₹{{p.price * count}}</p>
+    </div>
   </div>
-
 </div>
+}
